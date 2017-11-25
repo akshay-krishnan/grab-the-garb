@@ -18,15 +18,30 @@
         android:layout_marginBottom="30dp"
         android:text="Report Garbage not picked!!!"
         android:onClick="garbage"/>
+
+    <Button
+
+        android:id="@+id/picked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignTop="@+id/govt"
+        android:layout_below="@id/govt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        android:onClick="cleaned"
+        android:text="Picked the grab" />
+
     <Button
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_below="@+id/picked"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/govt"
-        android:text="Sell Scrap"
-        android:onClick="scrap"/>
+        android:layout_marginTop="17dp"
+        android:onClick="scrap"
+        android:text="Sell Scrap" />
 
 
 </RelativeLayout>

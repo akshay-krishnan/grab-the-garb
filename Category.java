@@ -105,7 +105,53 @@ public class Category extends AppCompatActivity {
         }
 
     }
+    public void cleaned(View v)
+    {
+        String URL = "jdbc:mysql://10.24.32.31";
+        String user = "root";
+        String password = "";
+        try {
+            final String mobileNumber = this.getMobile();
+            final String address = this.getAdd();
+            Log.v("From Category:", mobileNumber);
 
+            java.sql.Connection con = (java.sql.Connection) new com.example.ranja.myapplication.Connection().execute(URL, user, password).get();
+            Log.v("DB", "Hey I am connected to make a log on clean garbage !!!!");
+            AsyncTask task =  new AsyncTask() {
+
+                @Override
+                protected Void doInBackground(Object[] objects) {
+                    try
+                    {
+                        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                        Date date = new Date();
+                        String date1 = dateFormat.format(date);
+                        java.sql.Connection con = ((java.sql.Connection)objects[0]);
+                        Log.v("mobile number",mobileNumber);
+                        Statement st = con.createStatement();
+                        st.executeUpdate("DELETE FROM " + "govt" + " WHERE Mobile ='"+mobileNumber+"'");
+                    }
+                    catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                    return null;
+                }
+
+                @Override
+                protected void onPostExecute(Object o) {
+
+                        Toast.makeText(getApplicationContext(), "Deleted !!", Toast.LENGTH_SHORT).show();
+                }
+            }.execute(con);
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+    }
     private String getMobile()
     {
         Bundle extras = getIntent().getExtras();
