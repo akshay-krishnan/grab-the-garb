@@ -1,16 +1,21 @@
-package com.example.suthirthanagesh.buyer;
+package com.example.ranja.myapplication;
 
-import android.os.AsyncTask;
-import android.util.Log;
+/**
+ * Created by ranja on 11/26/2017.
+ */
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
-import static android.content.ContentValues.TAG;
+        import android.os.AsyncTask;
+        import android.util.Log;
+
+        import java.sql.Connection;
+        import java.sql.DriverManager;
+        import java.sql.ResultSet;
+        import java.sql.Statement;
+        import java.util.ArrayList;
+        import java.util.List;
+
+        import static android.content.ContentValues.TAG;
 
 /**
  * Created by suthirtha Nagesh on 11/25/2017.
@@ -34,7 +39,7 @@ public class retrieve extends AsyncTask<Integer, Void, List> {
             Statement st = con.createStatement();
             Log.v("DB","Connected!!!!!");
             ResultSet rs=st.executeQuery("SELECT * FROM  private");
-           // String id=rs.getString("Mobile");
+            // String id=rs.getString("Mobile");
 
             int i1=(int)i[0];
             String s;
@@ -53,9 +58,9 @@ public class retrieve extends AsyncTask<Integer, Void, List> {
                 int id = rs.getInt(s);
                 if(id>0)
                 {
-               zoom.add(rs.getString("Mobile"));
-               zoom.add(rs.getString("Address"));
-               zoom.add(Integer.toString(id));
+                    zoom.add(rs.getString("Mobile"));
+                    zoom.add(rs.getString("Address"));
+                    zoom.add(Integer.toString(id));
                 }
 
             }

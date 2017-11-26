@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.ranja.myapplication.Seller"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seller"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"/>
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffb6c1"
+            android:id="@+id/toggle"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buyer"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"/>
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30sp"
+        android:text = "Select"
+        android:onClick="startActivity1"/>
+</RelativeLayout>

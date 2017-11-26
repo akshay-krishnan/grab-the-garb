@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Intent intent1 = new Intent(this, Category.class);
+        Intent intent1 = new Intent(this, Seller.class);
         Bundle extras = new Bundle();
         extras.putString("mobile",mobileNumber);
         extras.putString("address",address);
